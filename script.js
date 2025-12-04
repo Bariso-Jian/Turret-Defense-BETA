@@ -32,7 +32,7 @@ const bossTime = document.getElementById('bossImg');
 const flash = new Image('muzzle.png');
 
 let mouse = { x: 0, y: 0 };
-let turret = { x: 1200, y: 800, radius: 50 };
+let turret = { x: 1000, y: 780, radius: 50 };
 
 let shooting = new Audio('Shooting.mp3');
 shooting.volume = 0.4;
@@ -1188,4 +1188,5 @@ abilityUpdate();
 resizeCanvas();
 
 animate();
+
 
