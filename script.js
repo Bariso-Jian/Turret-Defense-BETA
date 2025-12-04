@@ -226,6 +226,11 @@ function resizeCanvas() {
     canvas.height = window.innerHeight;
 }
 
+function positionTurret() {
+    turret.x = canvas.width / 2;
+    turret.y = canvas.height - 80;  // same offset from bottom across screens
+}
+
 document.addEventListener("mousemove", (e) => {
     const rect = canvas.getBoundingClientRect();
     mouse.x = e.clientX - rect.left;
@@ -392,7 +397,7 @@ function spawnBoss() {
 }
 
 function spawnBigAssBullet() {
-    const x = 780;
+    const x = canvas.width / 2;
     const y = 300;
 
     bigAhhBullet.push({ x, y, 
@@ -407,7 +412,7 @@ function spawnBigAssBullet() {
 }
 
 function background() {
-    const x = 800;
+    const x = canvas.width / 2;
     const y = 300;
 
     let randomWidth = Math.floor(Math.random() * 400) + 200;
@@ -556,7 +561,7 @@ function animate() {
             boss.y += boss.vy
         }
 
-        boss.x += boss.vx * newX;
+        boss.x = canvas.width / 2;
 
         boss.kulay = boss.color;
 
@@ -1185,9 +1190,15 @@ setTimeout(() => {
 
 abilityUpdate();
 
-resizeCanvas();
+positionTurret();
+
+window.addEventListener("resize", () => {
+    resizeCanvas();
+    positionTurret();
+});
 
 animate();
+
 
 
 
