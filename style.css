@@ -1,0 +1,264 @@
+body {
+    margin: 0;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+#zeCanvas {
+    background-color: black;
+    position: relative;
+    z-index: 1;
+}
+
+#info {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    border: white 2px solid;
+    width: 5.5%;
+    height: 100%;
+    background: #000000;
+    background: linear-gradient(11deg, rgba(0, 0, 0, 1) 0%, rgba(23, 23, 23, 1) 51%, rgba(43, 43, 43, 1) 100%);
+}
+
+.infoText {
+    display: flex;
+    justify-content: space-around;
+}
+
+.heatlhyText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid white;
+}
+
+#Health {
+    font-weight: 690;
+    font-size: 1.6rem;
+    color: white;
+    transition: color 1s ease-out;
+}
+
+.HealthbutOUCH {
+    transition: none !important;
+}
+
+.infoImg {
+    width: 80%;
+    height: 70%;
+}
+
+.abilityIMG {
+    width: 100%;
+    height: 10%;
+    border: 2px solid white;
+    border-radius: 8px;
+    opacity: 1;
+}
+
+#upgrades {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 110;
+    top: 5%;
+    left: 10%;
+    border: 2px solid white;
+    background: #000000;
+    background: linear-gradient(11deg, rgba(0, 0, 0, 1) 0%, rgba(23, 23, 23, 1) 51%, rgba(43, 43, 43, 1) 100%);
+    width: 80%;
+    height: 90%;
+    transform: translateY(0);
+    transition: transform 1s ease-out;
+}
+
+.selectionOfUpgrades {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    gap: 1rem;
+}
+
+.upgrade {
+    padding: 0.6%;
+    text-align: center;
+    border: 3px solid white;
+    border-radius: 16px;
+    width: 20%;
+    height: 90%;
+}
+
+.upgradeImg {
+    width: 30%;
+    height: 20%;
+}
+
+#upgrade1 {
+    padding: 1rem;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    top: 0;
+    background-color: black;
+    border: 2px solid white;
+}
+
+#upgrade2{
+    padding: 1rem;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    top: 0;
+    background-color: black;
+    border: 2px solid white;
+}
+
+#upgrade3 {
+    padding: 1rem;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    top: 0;
+    background-color: black;
+    border: 2px solid white;
+}
+
+#waveIsDoneText {
+    position: absolute;
+    z-index: 110;
+    opacity: 0;
+    display: none;
+    color: rgb(58, 58, 58);
+    top: 30%;
+    left: 30%;
+    transition: opacity 0.4s ease-in-out;
+}
+
+#actualUpgradeGooey {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 111;
+    top: 4%;
+    left: 8%;
+    border-top: 3px solid rgb(71, 71, 71);
+    border-left: 3px solid rgb(71, 71, 71);
+    border-bottom: 3px solid rgb(26, 26, 26);
+    border-right: 3px solid rgb(26, 26, 26);
+    background: #171717;
+    background: linear-gradient(90deg, rgba(23, 23, 23, 1) 0%, rgba(71, 71, 71, 1) 51%, rgba(23, 23, 23, 1) 100%);
+    width: 88%;
+    height: 92%;
+    transform: translateY(700px);
+    transition: transform 1s ease-out;
+}
+
+#actualListOfUpgrades {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 45%;
+    gap: 1rem;
+}
+
+#actualListOfUpgrades2 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 45%;
+}
+
+.actualUpgrade {
+    padding: 0.6%;
+    text-align: center;
+    border-top: 3px solid rgb(71, 71, 71);
+    border-left: 3px solid rgb(71, 71, 71);
+    border-bottom: 3px solid rgb(26, 26, 26);
+    border-right: 3px solid rgb(26, 26, 26);
+    box-shadow: 1px 10px 22px 0px rgba(0,0,0,0.75);
+    background-color: rgb(46, 46, 46);
+    width: 13%;
+    height: 90%;
+}
+
+.actualUpgradeButton {
+    background-color: #1b1b1b;
+    color: white;
+    padding: 0.5rem;
+    font-weight: bolder;
+}
+
+.actualUpgradeButton:hover {
+    background-color: #111111;
+}
+
+.KABLOOEY {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    opacity: 0;
+    transition: opacity 1.5s ease-out;
+    z-index: 100;
+    background-color: rgb(209, 209, 209);
+}
+
+.KABLOW {
+    transition: none !important;
+}
+
+#waver {
+    font-size: 2.4rem;
+    position: absolute;
+    display: inline-block;
+    z-index: 101;
+    color: white;
+    left: 45%;
+    transform: translateY(-5rem);
+    transition: transform 1.2s ease-out;
+    letter-spacing: 8px;
+}
+
+#bossImg {
+    position: absolute;
+    display: none;
+    z-index: 110;
+    width: 10%;
+    height: 55%;
+
+    left: 695px;
+    top: 0;
+
+    transition: top 15s linear;
+
+    transform: translate(-50%, -100%);
+
+    -webkit-user-drag: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#gayOver {
+    position: absolute;
+    display: none;
+    z-index: 690;
+    width: 100%;
+    height: 100%;
+}

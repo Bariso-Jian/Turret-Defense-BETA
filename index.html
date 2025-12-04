@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turret Defense</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img id="gayOver" src="A JOB.webp">
+
+    <h1 id="waver">WAVE</h1>
+    <div class="KABLOOEY"></div>
+
+    <img id="bossImg" alt="Boss" src="OH SHOOT TACTICAL TANK.png" draggable="false">
+    
+    <div id="waveIsDoneText">
+        <h1>Press 'E' to open the upgrades section</h1>
+        <h1>Press 'ENTER' to start the next wave</h1>
+    </div>
+
+    <div id="upgrades">
+        <h1 id="CHOOSE-YOUR-BRAINS">CHOOSE YOUR CLASS</h1>
+        <br>
+        <div class="selectionOfUpgrades">
+            <div class="upgrade">
+                <img class="upgradeImg" src="scouter.png" id="upgradeImg1">
+                <h1>Scouter</h1>
+                <h3>+More bullet speed</h3>
+                <h3>-Possibly higher recoil/bullet spread</h3>
+                <h3><u>+Special ability: Rapid fire</u></h3>
+                <button id="upgrade1">UPGRADE</button>
+            </div>
+            <div class="upgrade">
+                <img class="upgradeImg" src="Assaulter.png" id="upgradeImg2">
+                <h1>Assaulter</h1>
+                <h3>+Minimal spread</h3>
+                <h3><u>+Special ability: Grenade</u></h3>
+                <button id="upgrade2">UPGRADE</button>
+            </div>
+            <div class="upgrade">
+                <img class="upgradeImg" src="shogun.png" id="upgradeImg3">
+                <h1>Shotgunner</h1>
+                <h3>+Alot of buckshots fired w/ higher dmg</h3>
+                <h3>-Cooldown when firing</h3>
+                <h3><u>+Special ability: Speedy buckshots</u></h3>
+                <button id="upgrade3">UPGRADE</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="actualUpgradeGooey">
+        <h1>UPGRADES</h1>
+        <div id="actualListOfUpgrades">
+            <div class="actualUpgrade">
+                <img class="upgradeImg" src="actualUpgradeImages/speedier.png">
+                <h2>Any</h2>
+                <h4>+Bullet speed</h4>
+                <button id="u1" class="actualUpgradeButton">UPGRADE</button>
+            </div>
+            <div class="actualUpgrade">
+                <img class="upgradeImg" src="actualUpgradeImages/Clock.png">
+                <h2>Auto only</h2>
+                <h4>+Faster RPM</h4>
+                <button id="u2" class="actualUpgradeButton">UPGRADE</button>
+            </div>
+            <div class="actualUpgrade">
+                <img class="upgradeImg" src="actualUpgradeImages/stronger.png">
+                <h2>Any</h2>
+                <h4>+Bullet strength</h4>
+                <button id="u3" class="actualUpgradeButton">UPGRADE</button>
+            </div>
+            <div class="actualUpgrade">
+                <img class="upgradeImg" src="actualUpgradeImages/piercer.png">
+                <h2>Any</h2>
+                <h4>+Bullet pierce</h4>
+                <button id="u4" class="actualUpgradeButton">UPGRADE</button>
+            </div>
+        </div>
+
+        <div id="actualListOfUpgrades2">
+            <div class="actualUpgrade">
+                <img class="upgradeImg" src="actualUpgradeImages/Sluggier.png">
+                <h2>Shotgun</h2>
+                <h4>+1 pellet</h4>
+                <button id="u5" class="actualUpgradeButton">UPGRADE</button>
+            </div>
+        </div>
+            
+        </div>
+    </div>
+
+    <!--Lmao the actual canvas is just here, sitting on top of other html code-->
+    <canvas id="zeCanvas"></canvas>
+
+
+    <div id="info">
+        <div class="infoText">
+            <img class="infoImg" src="actualUpgradeImages/speedier.png">
+            <p id="fireCooldown">0</p>
+        </div>
+
+        <div class="infoText">
+            <img class="infoImg" src="actualUpgradeImages/Clock.png">
+            <p id="firerate">0</p>
+        </div>
+
+        <div class="infoText">
+            <img class="infoImg" src="actualUpgradeImages/stronger.png">
+            <p id="bulletStrong">0</p>
+        </div>
+
+        <div class="infoText">
+            <img class="infoImg" src="actualUpgradeImages/piercer.png">
+            <p id="bulletPierce">0</p>
+        </div>
+
+        <img src="Huh.png" class="abilityIMG">
+        <p id="abilityText"><strong>?</strong></p>
+
+        <div class="heatlhyText">
+            <img class="infoImg" src="HealthyHealthy.png">
+            <p id="Health">0</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
