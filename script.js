@@ -32,7 +32,7 @@ const bossTime = document.getElementById('bossImg');
 const flash = new Image('muzzle.png');
 
 let mouse = { x: 0, y: 0 };
-let turret = { x: 1000, y: 780, radius: 50 };
+let turret = { x: 800, y: 670, radius: 50 };
 
 let shooting = new Audio('Shooting.mp3');
 shooting.volume = 0.4;
@@ -377,7 +377,7 @@ function spawnEnemy() {
 }
 
 function spawnBoss() {
-    const x = 700;
+    const x = 895;
     const y = -100;
 
     bosses.push({ x, y, 
@@ -392,7 +392,7 @@ function spawnBoss() {
 }
 
 function spawnBigAssBullet() {
-    const x = 700;
+    const x = 895;
     const y = 300;
 
     bigAhhBullet.push({ x, y, 
@@ -1188,5 +1188,6 @@ abilityUpdate();
 resizeCanvas();
 
 animate();
+
 
 
