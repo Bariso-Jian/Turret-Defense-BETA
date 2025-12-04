@@ -32,7 +32,7 @@ const bossTime = document.getElementById('bossImg');
 const flash = new Image('muzzle.png');
 
 let mouse = { x: 0, y: 0 };
-let turret = { x: 700, y: 550, radius: 50 };
+let turret = { x: 900, y: 650, radius: 50 };
 
 let shooting = new Audio('Shooting.mp3');
 shooting.volume = 0.4;
@@ -290,7 +290,7 @@ let numberChancer = 15;
 
 
 function spawnEnemy() {
-    const x = Math.random() * (canvas.width - 50) + 50;
+    const x = Math.random() * (canvas.width - 100) + 100;
     const y = -20;
         
     enemyChancer = Math.floor(Math.random() * numberChancer) + 1;
@@ -530,7 +530,7 @@ function animate() {
 
     enemies.forEach((enemy, e) => {
         let newX = (Math.random() - 0.5) * 2 * 2;
-        if (enemy.y <= 620) {
+        if (enemy.y <= 660) {
             enemy.y += enemy.vy;
         } else {
             enemy.y += enemy.vy;
@@ -622,11 +622,11 @@ function animate() {
             const dy = b.y - e.y;
             const dist = Math.hypot(dx, dy);
             if (dist < b.radius + e.radius) {
-                if (e.canDefelct === 1 && b.pierce <= 2) {
+                if (e.canDefelct === 1 && b.pierce <= 1) {
                     rico();
                     b.vx += Math.floor(Math.random() * -20) + 20;
                     b.vy += Math.floor(Math.random() * -20) + 40;
-                } else if (e.canDefelct === 1 && b.pierce > 2) {
+                } else if (e.canDefelct === 1 && b.pierce > 1) {
                     bullets.splice(i, 1);
                     e.hp -= bulletDMG;
                 } else if (e.canDefelct === 0) {
@@ -1186,4 +1186,5 @@ setTimeout(() => {
 abilityUpdate();
 
 resizeCanvas();
+
 animate();
