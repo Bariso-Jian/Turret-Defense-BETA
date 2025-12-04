@@ -290,7 +290,7 @@ let numberChancer = 15;
 
 
 function spawnEnemy() {
-    const x = Math.random() * (canvas.width - 100) + 100;
+    const x = Math.random() * (canvas.width - 130) + 130;
     const y = -20;
         
     enemyChancer = Math.floor(Math.random() * numberChancer) + 1;
@@ -392,7 +392,7 @@ function spawnBoss() {
 }
 
 function spawnBigAssBullet() {
-    const x = 895;
+    const x = 780;
     const y = 300;
 
     bigAhhBullet.push({ x, y, 
@@ -570,7 +570,7 @@ function animate() {
     bigAhhBullet.forEach((biggie, j) => {
         let newX = (Math.random() - 0.5) * 2 * 2;
 
-        if (biggie.y <= 490) {
+        if (biggie.y <= 500) {
             biggie.y += biggie.vy
         } else {
             bigAhhBullet.splice(j, 1)
@@ -1188,6 +1188,7 @@ abilityUpdate();
 resizeCanvas();
 
 animate();
+
 
 
 
