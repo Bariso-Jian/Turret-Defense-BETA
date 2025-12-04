@@ -32,7 +32,7 @@ const bossTime = document.getElementById('bossImg');
 const flash = new Image('muzzle.png');
 
 let mouse = { x: 0, y: 0 };
-let turret = { x: 900, y: 650, radius: 50 };
+let turret = { x: 1200, y: 800, radius: 50 };
 
 let shooting = new Audio('Shooting.mp3');
 shooting.volume = 0.4;
@@ -530,7 +530,7 @@ function animate() {
 
     enemies.forEach((enemy, e) => {
         let newX = (Math.random() - 0.5) * 2 * 2;
-        if (enemy.y <= 660) {
+        if (enemy.y <= 720) {
             enemy.y += enemy.vy;
         } else {
             enemy.y += enemy.vy;
@@ -1188,3 +1188,4 @@ abilityUpdate();
 resizeCanvas();
 
 animate();
+
