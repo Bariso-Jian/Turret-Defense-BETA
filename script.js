@@ -392,7 +392,7 @@ function spawnBoss() {
         color: "rgba(126, 126, 126, 0)", 
         hitmarkcolor: "rgba(80, 80, 80, 0)", 
         OGcolor: "rgba(126, 126, 126, 0)", 
-        hp: 500
+        hp: 750
     });
 }
 
@@ -778,13 +778,13 @@ function Wavesystem() {
     } else if (wave === 3) {
         timer = 55
         waveText.textContent = "WAVE 3";
+        enemies.forEach(e => {
+            e.hp += 1;
+        })
     } else if (wave === 4) {
         timer = 65
         waveText.textContent = "WAVE 4";
         waveCooldown -= 50;
-        enemies.forEach(e => {
-            e.hp += 1;
-        })
     } else if (wave === 5) {
         timer = 70
         waveText.textContent = "WAVE 5";
@@ -825,7 +825,7 @@ function Wavesystem() {
             e.vy += 0.2;
         })
     } else if (wave === 10) {
-        timer = 300;
+        timer = 69420;
         waveText.textContent = "FINAL WAVE";
         waveText.style.color = "red";
         waveText.style.fontSize = "3rem"
@@ -835,15 +835,17 @@ function Wavesystem() {
             e.hp += 7;
             e.vy += 0.2;
         })
-        spawnBoss();
-        bossTime.style.display = "block"
         setTimeout(() => {
-            bossTime.style.top = "330px"
-        }, 50);
-        setTimeout(() => {
-            bossTime.style.transition = "top 0.2s ease-out"
-            canFireBigAhh = true;
-        }, 17000);
+            spawnBoss();
+            bossTime.style.display = "block"
+            setTimeout(() => {
+                bossTime.style.top = "330px"
+            }, 50);
+            setTimeout(() => {
+                bossTime.style.transition = "top 0.2s ease-out"
+                canFireBigAhh = true;
+            }, 17000);
+        }, 30000);
     }
     wewewew.play();
     waveText.style.transform = "translateY(0.2rem)"
@@ -955,7 +957,7 @@ function gameLoop() {
         }, 170);
         setTimeout(() => {
             canFireBigAhh = true
-        }, 10000);
+        }, 8000);
     }
 
     healthTxt.textContent = health;
@@ -1082,7 +1084,12 @@ up4.addEventListener("click", () => {
     }
 });
 
-document.addEventListener("mousedown", () => {
+let isFiring = false;
+
+document.addEventListener("pointerdown", () => {
+    if (isFiring) return;
+
+    isFiring = true;
     audioShooting = true;
     if (fireMode === 1 && isGUIactive === false && isStunned === false) {
             boolets();
@@ -1108,16 +1115,26 @@ document.addEventListener("mousedown", () => {
                 boolets();
                 boolets();
             }, 30);
+        
             playShot();
 
             shotgunCooldown += 200;
         }
 });
 
-document.addEventListener("mouseup", () => {
+function stopFiring() {
     audioShooting = false;
+    isFiring = false;
     clearInterval(bulletInterval);
+    bulletInterval = null;
+}
+
+document.addEventListener("pointerup", () => {
+    stopFiring();
 });
+
+window.addEventListener("pointercancel", stopFiring);
+window.addEventListener("blur", stopFiring);
 
 document.addEventListener("keydown", (e) => {
     if (e.key === "g") {
@@ -1191,6 +1208,7 @@ setTimeout(() => {
 abilityUpdate();
 
 positionTurret();
+resizeCanvas();
 
 window.addEventListener("resize", () => {
     resizeCanvas();
@@ -1198,6 +1216,7 @@ window.addEventListener("resize", () => {
 });
 
 animate();
+
 
 
 
