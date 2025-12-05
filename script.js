@@ -1211,6 +1211,7 @@ resizeCanvas();
 
 window.addEventListener('load', () {
     console.log('LOADED');
+    resizeCanvas();
     positionTurret();
 });
 
@@ -1220,6 +1221,7 @@ window.addEventListener("resize", () => {
 });
 
 animate();
+
 
 
 
