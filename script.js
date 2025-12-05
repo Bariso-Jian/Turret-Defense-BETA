@@ -1207,15 +1207,16 @@ setTimeout(() => {
 
 abilityUpdate();
 
-positionTurret();
-resizeCanvas();
-
 window.addEventListener("resize", () => {
     resizeCanvas();
     positionTurret();
 });
 
+resizeCanvas();
+positionTurret();
+
 animate();
+
 
 
 
